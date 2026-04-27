@@ -54,5 +54,19 @@ const produtos = [
         description: "Carro Porsche Branco com design elegante e desempenho excepcional, motor potente, interior sofisticado e tecnologia avançada para uma experiência de condução premium.",
         price: 500000,
         image: "images/car/car-8.avif"
+    },
+    {
+        id: 9,
+        name: "Carro Esportivo Vermelho",
+        description: "Carro Esportivo Vermelho com design agressivo e desempenho excepcional, motor potente, interior esportivo e tecnologia avançada para uma experiência de condução emocionante.",
+        price: 300000,
+        image: "images/car/car-9.avif"
+    },
+    {
+        id: 10,
+        name: "Carro Esportivo Azul",
+        description: "Carro Esportivo Azul com design agressivo e desempenho excepcional, motor potente, interior esportivo e tecnologia avançada para uma experiência de condução emocionante.",
+        price: 300000,
+        image: "images/car/car-10.avif"
     }
 ];
