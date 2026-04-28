@@ -1,13 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Loja de Carros - Qualidade e Confiança</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --brand-yellow: #ffc107;
+            --brand-dark: #212529;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        /* Banner Improvements */
+        .carousel-item img {
+            height: 80vh;
+            object-fit: cover;
+        }
+
+        .over {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+            z-index: 1;
+        }
+
+        .carousel-caption {
+            z-index: 2;
+            bottom: 20%;
+        }
+
+        /* Marketing Cards */
+        .feature-card {
+            border: 1px solid #eee;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--brand-yellow);
+        }
+
+        .marketing-icon {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, var(--brand-dark), var(--brand-yellow));
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--brand-dark);
+            color: white;
+            padding: 100px 0;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--brand-yellow);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        /* Stats Section */
+        .stat-box {
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+        .stat-box:last-child { border-right: none; }
+
+        @media (max-width: 768px) {
+            .stat-box { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 20px; margin-bottom: 20px; }
+        }
+    </style>
 </head>
-<body>
-    <h2>
-        Site de Carro
-    </h2>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3 shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="#">
+                <i class="bi bi-speedometer2 me-2"></i> CarrosEXP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-warning fw-bold px-4 rounded-pill" href="login.html">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carrossel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carrossel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carrossel" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="over"></div>
+                <img src="images/carro-1.png" class="d-block w-100" alt="Luxo">
+                <div class="carousel-caption">
+                    <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-bold">NOVIDADE NO ESTOQUE</span>
+                    <h1 class="display-2 fw-bold text-uppercase">Sinta o Poder</h1>
+                    <p class="lead fs-4 mb-4">Tecnologia e luxo em cada detalhe do seu próximo veículo.</p>
+                    <a href="catalogo.html" class="btn btn-warning btn-lg px-5 py-3 fw-bold rounded-pill shadow-lg">EXPLORAR CATÁLOGO</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="over"></div>
+                <img src="images/carro-2.png" class="d-block w-100" alt="Esportivo">
+                <div class="carousel-caption text-start">
+                    <h1 class="display-2 fw-bold text-uppercase">Performance <br><span class="text-warning">Sem Limites</span></h1>
+                    <p class="lead fs-4 mb-4">Garantia estendida e as melhores taxas do Brasil.</p>
+                    <a href="contato.html" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold rounded-pill">FALAR COM VENDEDOR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <h6 class="text-warning fw-bold text-uppercase ls-2">Vantagens Exclusivas</h6>
+            <h2 class="display-5 fw-bold">Por que escolher a nossa loja?</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 feature-card p-5 text-center shadow-sm">
+                    <h4 class="fw-bold">Procedência Total</h4>
+                    <p class="text-muted">Laudo cautelar aprovado em 100% do estoque. Segurança para sua família acima de tudo.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 feature-card p-5 text-center shadow-sm">
+                    <h4 class="fw-bold">Taxas Reduzidas</h4>
+                    <p class="text-muted">Condições exclusivas com bancos parceiros. Parcelas que cabem no seu orçamento.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 feature-card p-5 text-center shadow-sm">
+                    <h4 class="fw-bold">Troca com Troco</h4>
+                    <p class="text-muted">Avaliamos seu usado com a melhor tabela do mercado e você sai de carro novo e dinheiro no bolso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container mb-5">
+        <div class="cta-section text-center shadow-lg px-4">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="display-5 fw-bold mb-4">Não perca a chance de dirigir o seu sonho ainda hoje!</h2>
+                    <p class="lead mb-5 opacity-75">Temos uma equipe de especialistas pronta para encontrar o modelo perfeito para você. Atendimento personalizado e digital.</p>
+                    <div class="d-grid d-md-flex justify-content-md-center gap-3">
+                        <a href="catalogo.html" class="btn btn-warning btn-lg px-5 py-3 fw-bold text-dark rounded-pill">VER OFERTAS ATUAIS</a>
+                        <a href="#" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold rounded-pill">SIMULAR FINANCIAMENTO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-white py-5 border-top border-bottom">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 stat-box">
+                    <h2 class="display-4 fw-bold text-dark">10k+</h2>
+                    <p class="text-muted text-uppercase small fw-bold">Clientes Felizes</p>
+                </div>
+                <div class="col-md-3 stat-box">
+                    <h2 class="display-4 fw-bold text-dark">15</h2>
+                    <p class="text-muted text-uppercase small fw-bold">Anos de História</p>
+                </div>
+                <div class="col-md-3 stat-box">
+                    <h2 class="display-4 fw-bold text-dark">0km</h2>
+                    <p class="text-muted text-uppercase small fw-bold">Sensação em cada usado</p>
+                </div>
+                <div class="col-md-3 stat-box">
+                    <h2 class="display-4 fw-bold text-dark">24h</h2>
+                    <p class="text-muted text-uppercase small fw-bold">Aprovação de Crédito</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-4">CarrosEXP</h5>
+                    <p class="opacity-50">Sua jornada rumo ao próximo veículo começa aqui. Qualidade, transparência e o melhor pós-venda da região.</p>
+                    <div class="d-flex gap-3 fs-4">
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 offset-md-1">
+                    <h6 class="fw-bold mb-4">Navegação</h6>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="catalogo.html" class="text-light text-decoration-none">Catálogo</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Financiamento</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Vender Carro</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 offset-md-1">
+                    <h6 class="fw-bold mb-4">Atendimento</h6>
+                    <p class="mb-1 opacity-75"><i class="bi bi-geo-alt me-2 text-warning"></i> Av. das Nações, 1500 - São Paulo/SP</p>
+                    <p class="mb-1 opacity-75"><i class="bi bi-envelope me-2 text-warning"></i> contato@lojadecarros.com</p>
+                    <p class="mb-4 opacity-75"><i class="bi bi-telephone me-2 text-warning"></i> (11) 99999-9999</p>
+                </div>
+            </div>
+            <hr class="mt-5 opacity-25">
+            <div class="text-center opacity-50 small">
+                <p>&copy; 2026 - CarrosEXP. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="public/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
