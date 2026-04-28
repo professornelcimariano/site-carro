@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Loja de Carros</title>
+    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3 shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="#">
+                <i class="bi bi-speedometer2 me-2"></i> CarrosEXP
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="catalogo.html">Catálogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-warning fw-bold px-4 rounded-pill" href="login.html">Entrar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h2 class="mb-4">Nossos Carros</h2>
+        <div class="row g-4" id="lista-produtos">
+        </div>
+    </div>
+    <footer class="bg-dark text-light pt-5 pb-3">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="text-warning fw-bold mb-4">CarrosEXP</h5>
+                    <p class="opacity-50">Sua jornada rumo ao próximo veículo começa aqui. Qualidade, transparência e o melhor pós-venda da região.</p>
+                    <div class="d-flex gap-3 fs-4">
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 offset-md-1">
+                    <h6 class="fw-bold mb-4">Navegação</h6>
+                    <ul class="list-unstyled opacity-75">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Início</a></li>
+                        <li class="mb-2"><a href="catalogo.html" class="text-light text-decoration-none">Catálogo</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Financiamento</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Vender Carro</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 offset-md-1">
+                    <h6 class="fw-bold mb-4">Atendimento</h6>
+                    <p class="mb-1 opacity-75"><i class="bi bi-geo-alt me-2 text-warning"></i> Av. das Nações, 1500 - São Paulo/SP</p>
+                    <p class="mb-1 opacity-75"><i class="bi bi-envelope me-2 text-warning"></i> contato@lojadecarros.com</p>
+                    <p class="mb-4 opacity-75"><i class="bi bi-telephone me-2 text-warning"></i> (11) 99999-9999</p>
+                </div>
+            </div>
+            <hr class="mt-5 opacity-25">
+            <div class="text-center opacity-50 small">
+                <p>&copy; 2026 CarrosEXP. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="produtos.js"></script>
+    <script>
+        const vitrine = document.getElementById('lista-produtos');
+
+        produtos.forEach(p => {
+            vitrine.innerHTML += `
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="card h-100 shadow-sm">
+                    <img src="${p.image}" class="card-img-top" alt="${p.name}" style="height:200px; object-fit:cover;">                
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">${p.name}</h5>
+                        <hr>
+                        <p class="card-text">${p.description}</p>
+                        <p class="text-success fw-bold">R$ ${p.price.toLocaleString('pt-BR')}</p>                      
+                        <a href="page.html?id=${p.id}" class="btn btn-warning w-100 mt-auto">Ver Detalhes</a>
+                    </div>
+                </div>
+            </div>            
+        `;
+        });
+    </script>
+</body>
+
+</html>
